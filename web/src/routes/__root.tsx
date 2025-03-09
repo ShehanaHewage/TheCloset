@@ -17,6 +17,11 @@ function isRootPath(pathname: string) {
   if (cleanedPathname === '') {
     return true;
   }
+  return false;
+}
+
+function isAuthPath(pathname: string) {
+  const cleanedPathname = pathname.replace(/\/$/, '');
   if (cleanedPathname.startsWith('/auth')) {
     return true;
   }
@@ -37,8 +42,19 @@ function RootLayout() {
     <QueryClientProvider client={queryClient}>
       <div className="flex flex-col min-h-screen">
         <main className="flex-1 min-h-screen">
-          <Header className={cn(isRootPath(location.pathname) ? 'bg-transparent' : '')} />
-          <div className={cn('h-[80px]', isRootPath(location.pathname) && 'hidden')} />
+          <Header
+            className={cn(
+              isRootPath(location.pathname) ? 'bg-transparent' : '',
+              isAuthPath(location.pathname) ? 'hidden' : '',
+            )}
+          />
+          <div
+            className={cn(
+              'h-[80px]',
+              isRootPath(location.pathname) && 'hidden',
+              isAuthPath(location.pathname) && 'hidden',
+            )}
+          />
           <Outlet />
         </main>
         <Footer />

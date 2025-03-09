@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, Link } from '@tanstack/react-router';
 import { RegisterForm } from './-comps/RegisterForm';
 import { RegisterFormDto } from '@/models/user';
 import { useMutation } from '@tanstack/react-query';
@@ -36,8 +36,10 @@ function RegisterPage() {
       <div className="relative z-10 flex flex-col md:flex-row min-h-screen">
         <div className="hidden md:flex md:w-1/2 flex-col justify-between p-12">
           <div className="mb-auto">
-            <h1 className="text-4xl font-bold text-white mb-2">The Closet</h1>
-            <p className="text-white/80 text-lg">Join our community</p>
+            <Link to="/">
+              <h1 className="text-4xl font-bold text-white mb-2">The Closet</h1>
+              <p className="text-white/80 text-lg">Join our community</p>
+            </Link>
           </div>
 
           <div className="space-y-6">

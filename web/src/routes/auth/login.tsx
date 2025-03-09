@@ -1,4 +1,4 @@
-import { createFileRoute } from '@tanstack/react-router';
+import { createFileRoute, Link } from '@tanstack/react-router';
 import { LoginForm } from './-comps/LoginForm';
 import { useMutation } from '@tanstack/react-query';
 import { LoginFormDto, LoginDto } from '@/models/user';
@@ -37,8 +37,10 @@ function LoginPage() {
       <div className="relative z-10 flex flex-col md:flex-row min-h-screen">
         <div className="hidden md:flex md:w-1/2 flex-col justify-between p-12">
           <div className="mb-auto">
-            <h1 className="text-4xl font-bold text-white mb-2">The Closet</h1>
-            <p className="text-white/80 text-lg">Make your closet elegant</p>
+            <Link to="/">
+              <h1 className="text-4xl font-bold text-white mb-2">The Closet</h1>
+              <p className="text-white/80 text-lg">Make your closet elegant</p>
+            </Link>
           </div>
 
           <div className="space-y-6">
