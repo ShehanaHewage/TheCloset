@@ -1,0 +1,13 @@
+# packages
+node_modules
+
+# data
+mongodb_data
+storage
+
+# configs
+.env.local
+
+# ides
+.vscode
+.idea
